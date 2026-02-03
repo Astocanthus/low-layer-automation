@@ -80,11 +80,7 @@ Available licenses in `.CLAUDE/licenses/`:
 | **LOW-LAYER** | [LICENSE](.CLAUDE/licenses/LICENSE) | Proprietary projects (5 user free tier) |
 | **MIT** | [MIT](.CLAUDE/licenses/MIT) | Open source projects |
 
-To apply a license to a new project:
-```bash
-cp .CLAUDE/licenses/MIT /path/to/project/LICENSE
-# Edit [YEAR] and [COPYRIGHT HOLDER] placeholders
-```
+> **Rule**: When creating a new project, **always ask the user which license to apply** if not specified. Never assume a default license.
 
 > **Important**: Always consult these standards when generating code or documentation.
 
