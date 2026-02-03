@@ -4,6 +4,7 @@
 [![Bash](https://img.shields.io/badge/Bash-Hooks-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/Astocanthus/low-layer-automation)](https://github.com/Astocanthus/low-layer-automation/issues)
 
 **Claude Code automation configuration** for development workflows: code standards, AI orchestration, custom commands, and security hooks.
 
