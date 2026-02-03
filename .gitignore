@@ -1,0 +1,30 @@
+# =============================================================================
+# LOW-LAYER AUTOMATION - GITIGNORE
+# =============================================================================
+
+# Subprojects with their own git repositories
+low-layer-cdn/
+low-layer-website/
+
+# Local/sensitive configuration files
+.CLAUDE/settings.local.json
+.CLAUDE/plans/
+*.local.json
+.env*
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
