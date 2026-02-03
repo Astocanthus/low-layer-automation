@@ -3,7 +3,7 @@
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Config-7C3AED?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.ai/code)
 [![Bash](https://img.shields.io/badge/Bash-Hooks-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
 
-[![License: LOW-LAYER](https://img.shields.io/badge/License-LOW--LAYER-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **Claude Code automation configuration** for development workflows: code standards, AI orchestration, custom commands, and security hooks.
 
@@ -204,11 +204,7 @@ git checkout -b v1.2.0
 
 ## License
 
-This project is licensed under the [LOW-LAYER Source Available License](LICENSE).
-
-- **Free** for up to 5 users
-- **Commercial license** required for larger teams
-- Contact: contact@low-layer.com
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
