@@ -23,10 +23,13 @@ This is a new repository. Update this file as the project develops with:
 |------|---------|
 | `CLAUDE.md` | Project overview, security, standards aggregator |
 | `WORKFLOW.md` | AI agent orchestration, task management, quality assurance |
+| `architecture/` | Platform architecture, repository structure, technical decisions |
 | `.CLAUDE/tasks/todo.md` | Current work items and working memory |
 | `.CLAUDE/tasks/lessons.md` | Failure modes and prevention rules |
 
 > **Important**: Always follow `WORKFLOW.md` for operational principles and task management.
+>
+> **Architecture**: Consult `architecture/` before proposing structural changes or new components.
 
 ---
 

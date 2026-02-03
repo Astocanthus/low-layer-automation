@@ -21,6 +21,7 @@ This file complements `CLAUDE.md` with operational principles, task management, 
 ### 1. Plan Mode Default
 
 - Use for non-trivial tasks (3+ steps, multi-file changes, architectural decisions)
+- **Consult `architecture/`** before proposing structural changes or new components
 - Include verification steps in the plan
 - Stop and update the plan if new information invalidates it
 - Write crisp specs when requirements are ambiguous
@@ -123,6 +124,7 @@ File-based, auditable task tracking using `.CLAUDE/tasks/todo.md` and `.CLAUDE/t
 
 - Locate authoritative source of truth before editing
 - Prefer small, local reads over scanning entire repo
+- **For structural changes**: Read `architecture/` to understand platform design and repository relationships
 
 ### 2. Keep a Working Memory
 
@@ -250,9 +252,10 @@ A task is complete when:
 | Situation | Action |
 |-----------|--------|
 | Non-trivial task | Use Plan Mode, write to `.CLAUDE/tasks/todo.md` |
+| Structural/architectural change | Consult `architecture/` before proposing |
 | After mistake/correction | Add entry to `.CLAUDE/tasks/lessons.md` |
 | New session | Review `.CLAUDE/tasks/lessons.md` |
-| Before major refactor | Review `.CLAUDE/tasks/lessons.md` |
+| Before major refactor | Review `.CLAUDE/tasks/lessons.md` and `architecture/` |
 | Blocked | Ask ONE question with recommended default |
 | Unexpected failure | Stop-the-line, preserve evidence, re-plan |
 | Task complete | Verify DoD checklist, update todo |
