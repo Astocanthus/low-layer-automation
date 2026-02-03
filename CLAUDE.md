@@ -71,6 +71,21 @@ All code and documentation standards are externalized in `.CLAUDE/standards/`:
 | **Git Workflow** | [git-workflow.md](.CLAUDE/standards/git-workflow.md) | Branching strategy, naming conventions |
 | **Changelog** | [changelog-standards.md](.CLAUDE/standards/changelog-standards.md) | Keep a Changelog format, entry rules |
 
+### License Templates
+
+Available licenses in `.CLAUDE/licenses/`:
+
+| License | File | Usage |
+|---------|------|-------|
+| **LOW-LAYER** | [LICENSE](.CLAUDE/licenses/LICENSE) | Proprietary projects (5 user free tier) |
+| **MIT** | [MIT](.CLAUDE/licenses/MIT) | Open source projects |
+
+To apply a license to a new project:
+```bash
+cp .CLAUDE/licenses/MIT /path/to/project/LICENSE
+# Edit [YEAR] and [COPYRIGHT HOLDER] placeholders
+```
+
 > **Important**: Always consult these standards when generating code or documentation.
 
 ### Quick Reference
