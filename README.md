@@ -32,6 +32,11 @@ low-layer-automation/
 │   ├── tasks/
 │   │   ├── todo.md                  # Task tracking template
 │   │   └── lessons.md               # Lessons learned template
+│   ├── standards/                   # Externalized code standards
+│   │   ├── code-standards.md        # File headers, comments
+│   │   ├── readme-standards.md      # README template
+│   │   ├── git-workflow.md          # Branching strategy
+│   │   └── changelog-standards.md   # Changelog format
 │   └── commands/                    # Custom slash commands
 │       ├── changelog.md             # /changelog - Add changelog entries
 │       ├── push.md                  # /push - Commit and push
@@ -50,7 +55,6 @@ low-layer-automation/
 │
 ├── CLAUDE.md                        # Code generation standards
 ├── WORKFLOW.md                      # AI orchestration guidelines
-├── CHANGELOG.md                     # Version history
 └── .gitignore
 ```
 
