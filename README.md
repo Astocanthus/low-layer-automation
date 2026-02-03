@@ -14,7 +14,7 @@ This repository contains a production-ready Claude Code setup with workflows for
 ## Features
 
 - **Security Hook**: Pre-execution guard blocking dangerous operations (sudo, rm -rf, sensitive files)
-- **9 Custom Commands**: Specialized workflows for common development tasks
+- **10 Custom Commands**: Specialized workflows for common development tasks
 - **Code Standards**: Comprehensive guidelines for code generation and documentation
 - **AI Orchestration**: Workflow patterns for effective Claude Code usage
 - **Task Management**: File-based todo tracking and lessons learned system
@@ -46,6 +46,7 @@ low-layer-automation/
 │       ├── docker-release.md        # /docker-release - Build & push images
 │       ├── debug.md                 # /debug - Systematic debugging
 │       ├── epct.md                  # /epct - Explore-Plan-Code-Test
+│       ├── arch-update.md           # /arch-update - Document architecture changes
 │       ├── ask-command.md           # /ask-command - Create new commands
 │       └── web-design.md            # /web-design - UI/UX specialist
 │
@@ -72,6 +73,7 @@ low-layer-automation/
 | `/docker-release` | Build and push Docker image to ghcr.io |
 | `/debug` | Systematic bug debugging with deep analysis |
 | `/epct` | Explore-Plan-Code-Test workflow for features |
+| `/arch-update` | Document architectural decisions and changes |
 | `/ask-command` | Create and optimize new slash commands |
 | `/web-design` | Web development and UI/UX specialist mode |
 
@@ -151,21 +153,6 @@ Hook configuration and shared permissions:
   },
   "includeCoAuthoredBy": false
 }
-```
-
-### settings.local.json (Not Committed)
-
-Local-only permissions (machine-specific):
-
-```json
-{
-  "permissions": {
-    "allow": [
-      "Bash(git -c core.filemode=false clone:*)"
-    ]
-  }
-}
-```
 
 ---
 
