@@ -26,7 +26,8 @@ This repository contains a production-ready Claude Code setup with workflows for
 ```
 low-layer-automation/
 ├── .CLAUDE/                         # Claude Code configuration
-│   ├── settings.json                # Hook configuration
+│   ├── settings.json                # Hooks and shared permissions
+│   ├── settings.local.json          # Local permissions (not committed)
 │   ├── hooks/
 │   │   └── security-guard.sh        # Pre-execution security checks
 │   ├── tasks/
@@ -121,30 +122,27 @@ Modify commands in `.CLAUDE/commands/` to match your:
 
 ## Configuration Files
 
-### settings.json
+### settings.json (Shared)
 
-Controls hook execution:
+Hook configuration and shared permissions:
 
 ```json
 {
   "hooks": {
     "PreToolUse": [
       {
-        "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/security-guard.sh\"",
-        "timeout": 10000,
-        "tools": ["Bash", "Read", "Write", "Edit", "Glob", "Grep"]
+        "matcher": "Bash|Read|Write|Edit|Glob|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.CLAUDE/hooks/security-guard.sh\"",
+            "timeout": 10,
+            "statusMessage": "Security check..."
+          }
+        ]
       }
     ]
-  }
-}
-```
-
-### settings.local.json (Not Committed)
-
-Local overrides and permissions:
-
-```json
-{
+  },
   "permissions": {
     "allow": [
       "Bash(gh pr create:*)",
@@ -152,6 +150,20 @@ Local overrides and permissions:
     ]
   },
   "includeCoAuthoredBy": false
+}
+```
+
+### settings.local.json (Not Committed)
+
+Local-only permissions (machine-specific):
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -c core.filemode=false clone:*)"
+    ]
+  }
 }
 ```
 
