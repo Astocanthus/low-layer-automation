@@ -18,7 +18,7 @@ LOW-LAYER Platform
 │
 ├── low-layer-website                # Public website (landing, legal)
 │
-├── low-layer-console                # Web console - authenticated (TypeScript/React)
+├── low-layer-console                # Web console - authenticated (TypeScript/Angular)
 │
 ├── terraform-provider-low-layer    # Terraform provider (Go)
 │
@@ -273,54 +273,88 @@ low-layer-website/
 
 **Language**: TypeScript
 
-**Framework**: React + Vite
+**Framework**: Angular 21+ / Nx Monorepo
 
 **URL**: https://cloud.low-layer.com
 
 ```
 low-layer-console/
-├── src/
-│   ├── main.tsx
-│   ├── App.tsx
+├── apps/
+│   └── console/                     # Main Angular application
+│       ├── src/
+│       │   ├── main.ts              # Entry point (MSW + Angular bootstrap)
+│       │   ├── app/
+│       │   │   ├── app.ts           # Root component
+│       │   │   ├── app.config.ts    # Angular providers configuration
+│       │   │   ├── app.routes.ts    # Top-level route definitions
+│       │   │   ├── layout/          # Shell layout (sidebar, header)
+│       │   │   └── components/      # App-level shared components
+│       │   └── environments/        # Environment configs (dev, prod)
+│       └── public/
+│
+├── libs/
+│   ├── core/
+│   │   ├── http/                    # HTTP services, interceptors, retry logic
+│   │   │   └── src/lib/
+│   │   │       ├── services/        # ApiService, AuthService, NotificationService
+│   │   │       ├── interceptors/    # auth, error, retry, logging
+│   │   │       └── utils/           # Retry strategies, circuit breaker
+│   │   │
+│   │   └── mocks/                   # MSW mock server
+│   │       └── src/lib/
+│   │           ├── browser/         # MSW browser setup
+│   │           ├── handlers/        # Per-domain mock handlers
+│   │           └── data/            # In-memory mock store
 │   │
-│   ├── components/
-│   │   ├── ui/                # Design system (shadcn/ui)
-│   │   ├── layout/            # Navigation, sidebar
-│   │   ├── graph/             # Visual editor (React Flow)
-│   │   └── forms/             # Service configuration forms
-│   │
-│   ├── pages/
+│   ├── features/                    # Feature libraries (lazy-loaded)
 │   │   ├── dashboard/
 │   │   ├── organizations/
 │   │   ├── scopes/
-│   │   ├── nodes/
 │   │   ├── catalog/
-│   │   └── settings/
+│   │   └── graph-editor/
 │   │
-│   ├── hooks/                 # React Query hooks
-│   ├── api/                   # API client (generated from OpenAPI)
-│   ├── stores/                # Zustand stores
-│   └── lib/                   # Utilities
+│   └── shared/
+│       └── models/                  # Zod schemas, types, factories
+│           └── src/lib/
+│               ├── schemas/         # Zod validation schemas per domain
+│               ├── types/           # Inferred TypeScript types
+│               └── factories/       # Mock data factories
 │
-├── public/
-├── index.html
-├── tailwind.config.js
-├── vite.config.ts
+├── e2e/                             # Playwright E2E tests
+├── nx.json                          # Nx workspace configuration
+├── tsconfig.base.json
 └── package.json
+```
+
+**Feature Library Structure** (each feature follows the same pattern):
+```
+libs/features/<feature>/
+└── src/
+    ├── index.ts                     # Public API barrel
+    └── lib/
+        ├── <feature>.routes.ts      # Feature route definitions
+        ├── data-access/             # Repository (signals + API calls)
+        │   └── <entity>.repository.ts
+        ├── features/                # Smart (container) components
+        │   ├── list/
+        │   └── detail/
+        └── ui/                      # Dumb (presentational) components
+            └── <entity>-card/
 ```
 
 **Tech Stack**:
 | Component | Technology |
 |-----------|------------|
-| Framework | React 18 |
-| Build | Vite |
-| Styling | Tailwind CSS |
-| Components | shadcn/ui |
-| State | Zustand |
-| Data Fetching | TanStack Query |
-| Graph Editor | React Flow |
-| Forms | React Hook Form + Zod |
+| Framework | Angular 21 (standalone components) |
+| Build / Monorepo | Nx |
+| Styling | CSS (component-scoped) |
+| State | Angular Signals |
+| Validation | Zod (runtime schema validation) |
+| Graph Editor | Rete.js |
+| Mocking | MSW (Mock Service Worker) |
+| Testing | Vitest + Playwright |
 | Auth | Keycloak OIDC |
+| SSR | Angular SSR (optional) |
 
 ---
 

@@ -89,32 +89,3 @@ Each license file contains metadata (badge, readme text, placeholders) in a head
 > **Rule**: When creating a new project, **always ask the user which license to apply** if not specified. Never assume a default license.
 
 > **Important**: Always consult these standards when generating code or documentation.
-
-### Quick Reference
-
-**File Header** (all files):
-```
-# Copyright (C) - LOW-LAYER
-# Contact : contact@low-layer.com
-# ============================================================================
-# [FILENAME] - [One-line summary]
-# ============================================================================
-```
-
-**Section Header** (major blocks):
-```
-# ---------------------------------------------------------------------------
-# [SECTION TITLE IN UPPERCASE]
-# ---------------------------------------------------------------------------
-```
-
-**Commit Message**:
-```
-feat|fix|docs|refactor: short description
-```
-
-**Changelog Entry**:
-```markdown
-- **Feature Name** (`path/to/file.js`)
-  - Detailed description
-```
