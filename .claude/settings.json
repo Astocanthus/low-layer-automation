@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.CLAUDE/hooks/security-guard.sh\"",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/security-guard.sh\"",
             "timeout": 10,
             "statusMessage": "Security check..."
           }
@@ -20,5 +20,8 @@
       "Bash(gh release create:*)"
     ]
   },
-  "includeCoAuthoredBy": false
+  "includeCoAuthoredBy": false,
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
 }

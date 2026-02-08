@@ -5,10 +5,11 @@
 # Subprojects with their own git repositories
 low-layer-cdn/
 low-layer-website/
+low-layer-architecture/
 
 # Local/sensitive configuration files
-.CLAUDE/settings.local.json
-.CLAUDE/plans/
+.claude/settings.local.json
+.claude/plans/
 *.local.json
 .env*
 
@@ -23,6 +24,10 @@ desktop.ini
 *.swp
 *.swo
 *~
+
+# Task plans (local working files)
+.claude/tasks/*
+!.claude/tasks/README.md
 
 # Temporary files
 *.tmp

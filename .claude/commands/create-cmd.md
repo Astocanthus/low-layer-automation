@@ -4,7 +4,7 @@ argument-hint: <action> <name> - e.g., "create deploy", "refactor @commands/comm
 allowed-tools: Read, Write, Edit, Glob, WebFetch
 ---
 
-# Ask Command
+# Create Command
 
 Create actionable command prompts that match existing patterns in the repository.
 
@@ -13,14 +13,14 @@ Create actionable command prompts that match existing patterns in the repository
 ## Usage
 
 ```bash
-/ask-command <action> <name>
+/create-command <action> <name>
 ```
 
 **Examples:**
 ```bash
-/ask-command create deploy
-/ask-command refactor @commands/commit.md
-/ask-command update @commands/release.md
+/create-command create deploy
+/create-command refactor @commands/commit.md
+/create-command update @commands/release.md
 ```
 
 ## Workflow Context
@@ -28,19 +28,19 @@ Create actionable command prompts that match existing patterns in the repository
 This command is used to create or improve slash commands:
 
 ```
-1. /ask-command create <name>      # Create new command from template
-2. /ask-command refactor @path     # Enhance existing command
-3. /ask-command update @path       # Modify specific sections
+1. /create-command create <name>      # Create new command from template
+2. /create-command refactor @path     # Enhance existing command
+3. /create-command update @path       # Modify specific sections
 ```
 
 ## Instructions
 
-When the user invokes `/ask-command <action> <name>`, execute the following steps:
+When the user invokes `/create-command <action> <name>`, execute the following steps:
 
 ### Step 0: Research Slash Commands
 
 - Fetch official documentation from https://docs.claude.com/en/docs/claude-code/slash-commands
-- Review existing commands in `.CLAUDE/commands/` directory for patterns
+- Review existing commands in `.claude/commands/` directory for patterns
 - **CRITICAL**: Always consult documentation for latest best practices
 
 ### Step 1: Parse Arguments
@@ -59,8 +59,8 @@ Select appropriate format based on docs and examples:
 
 ### Step 3: Write/Update File
 
-Save to `.CLAUDE/commands/` directory:
-- New commands: `.CLAUDE/commands/<name>.md`
+Save to `.claude/commands/` directory:
+- New commands: `.claude/commands/<name>.md`
 - Updates: Preserve all existing content and structure
 - **ALWAYS**: Follow the standard command pattern
 

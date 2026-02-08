@@ -17,7 +17,8 @@ HOOK_EVENT=$(echo "$INPUT" | jq -r '.hook_event_name // empty')
 CWD=$(echo "$INPUT" | jq -r '.cwd // empty')
 
 # Project path (authorized working directory)
-PROJECT_DIR="$CWD"
+# Prefer CLAUDE_PROJECT_DIR (project root) over CWD (which may be a subdirectory)
+PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$CWD}"
 
 # =============================================================================
 # CONFIGURATION - Dangerous paths and patterns
@@ -146,6 +147,18 @@ is_within_project() {
     return 1  # Outside project
 }
 
+# Check if a path is within ~/.claude/ (read-only access for skills, config)
+is_within_claude_home() {
+    local path="$1"
+    local norm_path=$(normalize_path "$path")
+    local norm_claude_home=$(normalize_path "$HOME/.claude")
+
+    if [[ "$norm_path" == "$norm_claude_home"* ]]; then
+        return 0
+    fi
+    return 1
+}
+
 # Check if a path is sensitive
 is_sensitive_path() {
     local path="$1"
@@ -257,6 +270,10 @@ check_file_tool() {
 
     # Check if the file is outside the project
     if ! is_within_project "$file_path"; then
+        # Allow read-only access to ~/.claude/ (global skills, config)
+        if [ "$TOOL_NAME" = "Read" ] && is_within_claude_home "$file_path"; then
+            allow_action
+        fi
         block_action "Access forbidden outside project. You can only access files within: $PROJECT_DIR"
     fi
 
@@ -278,8 +295,8 @@ check_glob_tool() {
     local path=$(echo "$INPUT" | jq -r '.tool_input.path // empty')
     local pattern=$(echo "$INPUT" | jq -r '.tool_input.pattern // empty')
 
-    # If a path is specified, check it's within the project
-    if [ -n "$path" ] && ! is_within_project "$path"; then
+    # If a path is specified, check it's within the project or ~/.claude/ (skills)
+    if [ -n "$path" ] && ! is_within_project "$path" && ! is_within_claude_home "$path"; then
         block_action "File search outside project forbidden. You can only search within: $PROJECT_DIR"
     fi
 

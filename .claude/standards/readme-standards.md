@@ -27,7 +27,7 @@ All `README.md` files in LOW-LAYER projects MUST follow this standardized struct
 ---
 ```
 
-> **License Badge**: Replace `[LICENSE_BADGE]` with the appropriate badge based on the license chosen from `.CLAUDE/licenses/`. See license files for badge format.
+> **License Badge**: Replace `[LICENSE_BADGE]` with the appropriate badge based on the license chosen from `.claude/licenses/`. See license files for badge format.
 
 > **GitHub Repo**: Replace `[GITHUB_REPO]` with the repository path (e.g., `Astocanthus/my-project`). This is used for Release and Issues badges.
 

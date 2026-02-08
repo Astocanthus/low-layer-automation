@@ -1,12 +1,12 @@
 ---
-description: Document architectural decisions and evolution in architecture/ folder
+description: Document architectural decisions and evolution in low-layer-architecture/ folder
 argument-hint: <decision|change|session> - e.g., "session", "Add Redis caching"
 allowed-tools: Bash, Read, Edit, Write, Grep, Glob, Task
 ---
 
 # Architecture Update Command
 
-Document architectural decisions, changes, and evolution by updating or creating entries in the `architecture/` folder.
+Document architectural decisions, changes, and evolution by updating or creating entries in the `low-layer-architecture/` folder.
 
 **You need to always ULTRA THINK.**
 
@@ -90,15 +90,15 @@ Determine the mode based on input:
 
    1. DECISION: Use PostgreSQL for tenant isolation
       → Rationale: Row-level security, native JSON support
-      → Target: architecture/decisions/ADR-001-database.md
+      → Target: low-layer-architecture/decisions/ADR-001-database.md
 
    2. NEW COMPONENT: Notification service
       → Purpose: Async messaging, email/webhook delivery
-      → Target: architecture/repositories.md (add section)
+      → Target: low-layer-architecture/repositories.md (add section)
 
    3. CHANGE: Add caching layer
       → Impact: Between API and database
-      → Target: architecture/platform.md (update diagram)
+      → Target: low-layer-architecture/platform.md (update diagram)
 
 Document these changes?
 ```
@@ -130,13 +130,13 @@ Launch **parallel subagents** to analyze existing documentation:
 
 ```bash
 # Read existing architecture files
-ls -la architecture/
+ls -la low-layer-architecture/
 ```
 
 Files to examine:
-- `architecture/platform.md` - Infrastructure and platform design
-- `architecture/repositories.md` - Repository structure and responsibilities
-- `architecture/diagrams/` - Visual representations
+- `low-layer-architecture/platform.md` - Infrastructure and platform design
+- `low-layer-architecture/repositories.md` - Repository structure and responsibilities
+- `low-layer-architecture/diagrams/` - Visual representations
 
 **ULTRA THINK**: Where does this change fit? What existing documentation needs updating?
 
@@ -146,10 +146,10 @@ Based on the change type:
 
 | Type | Action |
 |------|--------|
-| **Decision** | Add to existing file's "Decisions" section or create `architecture/decisions/ADR-XXX.md` |
+| **Decision** | Add to existing file's "Decisions" section or create `low-layer-architecture/decisions/ADR-XXX.md` |
 | **Change to existing** | Update relevant section in `platform.md` or `repositories.md` |
 | **New component** | Add section to `repositories.md`, update diagrams if needed |
-| **New concept** | Create new file in `architecture/` |
+| **New concept** | Create new file in `low-layer-architecture/` |
 
 ---
 
@@ -163,7 +163,7 @@ Show the proposed documentation changes to the user:
 📐 Architecture Update
 
 📁 Files to modify:
-   • architecture/repositories.md (add new section)
+   • low-layer-architecture/repositories.md (add new section)
 
 📝 Changes:
 ┌────────────────────────────────────────────────────────────┐
@@ -203,14 +203,14 @@ Check for:
 ✅ Architecture documentation updated!
 
 📁 Modified:
-   • architecture/repositories.md
+   • low-layer-architecture/repositories.md
 
 📝 Changes:
    • Added section for low-layer-notifications repository
    • Updated repository count in overview
 
 💡 Next steps:
-   • Update architecture/diagrams/ if needed
+   • Update low-layer-architecture/diagrams/ if needed
    • Run /changelog to document implementation
 ```
 
@@ -284,7 +284,7 @@ repo-name/
 |-------|--------|
 | Unclear where to add | Ask user to clarify scope |
 | Conflicting information | Highlight conflict, ask for resolution |
-| Missing architecture/ folder | Create basic structure |
+| Missing low-layer-architecture/ folder | Create basic structure |
 | Change too broad | Suggest breaking into multiple updates |
 
 ## Notes

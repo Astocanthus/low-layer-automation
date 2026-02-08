@@ -16,7 +16,8 @@ This repository contains a production-ready Claude Code setup with workflows for
 
 - **Security Hook**: Pre-execution guard blocking dangerous operations (sudo, rm -rf, sensitive files)
 - **10 Custom Commands**: Specialized workflows for common development tasks
-- **Code Standards**: Comprehensive guidelines for code generation and documentation
+- **[Skills Auto-Detection](#skills)**: Context-aware skill loading via [jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills)
+- **Code & Testing Standards**: Guidelines for code generation, documentation, and [test pyramid](.claude/standards/testing-standards.md)
 - **AI Orchestration**: Workflow patterns for effective Claude Code usage
 - **Task Management**: File-based todo tracking and lessons learned system
 
@@ -26,7 +27,7 @@ This repository contains a production-ready Claude Code setup with workflows for
 
 ```
 low-layer-automation/
-├── .CLAUDE/                         # Claude Code configuration
+├── .claude/                         # Claude Code configuration
 │   ├── settings.json                # Hooks and shared permissions
 │   ├── settings.local.json          # Local permissions (not committed)
 │   ├── hooks/
@@ -38,7 +39,8 @@ low-layer-automation/
 │   │   ├── code-standards.md        # File headers, comments
 │   │   ├── readme-standards.md      # README template
 │   │   ├── git-workflow.md          # Branching strategy
-│   │   └── changelog-standards.md   # Changelog format
+│   │   ├── changelog-standards.md   # Changelog format
+│   │   └── testing-standards.md     # Test pyramid, per-stack conventions
 │   ├── licenses/                    # License templates
 │   │   ├── low-layer.license        # LOW-LAYER proprietary license
 │   │   └── mit.license              # MIT license template
@@ -54,10 +56,10 @@ low-layer-automation/
 │       ├── ask-command.md           # /ask-command - Create new commands
 │       └── web-design.md            # /web-design - UI/UX specialist
 │
-├── architecture/                    # Technical documentation (LOW-LAYER example)
+├── low-layer-architecture/           # Technical documentation (LOW-LAYER example)
 │   ├── platform.md                  # Platform architecture
 │   ├── repositories.md              # Multi-repo structure
-│   └── diagrams/                    # Architecture diagrams
+│   └── infrastructure.md            # Infrastructure architecture
 │
 ├── CLAUDE.md                        # Code generation standards
 ├── WORKFLOW.md                      # AI orchestration guidelines
@@ -83,9 +85,66 @@ low-layer-automation/
 
 ---
 
+## Skills
+
+Skills inject domain expertise (language patterns, framework conventions, testing strategies) into Claude Code sessions. Commands like `/epct` and `/debug` **auto-detect** relevant skills based on file extensions, project markers, and task keywords — no manual selection needed.
+
+Skills are loaded from [jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills) (65 skills, 12 categories). Full documentation: [jeffallan.github.io/claude-skills](https://jeffallan.github.io/claude-skills)
+
+### Installation (Global)
+
+This project uses **global installation** to avoid duplicating skills across repositories:
+
+```bash
+# Install the CLI
+npx skills add https://github.com/Jeffallan/claude-skills --list   # Preview available skills
+
+# Install skills globally (available across all projects)
+npx skills add https://github.com/Jeffallan/claude-skills -g -s golang-pro
+npx skills add https://github.com/Jeffallan/claude-skills -g -s angular-architect
+npx skills add https://github.com/Jeffallan/claude-skills -g -s test-master
+npx skills add https://github.com/Jeffallan/claude-skills -g -s kubernetes-specialist
+npx skills add https://github.com/Jeffallan/claude-skills -g -s terraform-engineer
+npx skills add https://github.com/Jeffallan/claude-skills -g -s typescript-pro
+```
+
+> Global skills are stored in `~/.claude/skills/` and shared across all projects.
+
+### Recommended Profiles
+
+| Profile | Skills | Use case |
+|---------|--------|----------|
+| **Backend** | `golang-pro`, `postgres-pro`, `api-designer` | API, CLI, Operator, Agent |
+| **Frontend** | `angular-architect`, `typescript-pro` | Console (Angular 21) |
+| **Infra** | `kubernetes-specialist`, `terraform-engineer`, `devops-engineer` | Operator, Helm, CAPI |
+| **Quality** | `test-master`, `code-reviewer`, `debugging-wizard` | All projects |
+
+### Management
+
+```bash
+npx skills ls -g                  # List globally installed skills
+npx skills find <keyword>         # Search available skills
+npx skills check                  # Check for updates
+npx skills update                 # Update all skills
+npx skills rm -g <skill-name>     # Remove a global skill
+```
+
+### How Auto-Detection Works
+
+Each skill has `triggers` in its frontmatter (e.g., `.go`, `angular.json`, `Chart.yaml`). When `/epct` or `/debug` runs:
+
+1. Scans `~/.claude/skills/*/SKILL.md` for installed skills
+2. Matches `triggers` against the task description and involved files
+3. Loads matched skills and injects their rules into **all subagent prompts**
+4. Reports: "Skills loaded: `golang-pro`, `test-master`"
+
+See [WORKFLOW.md § Skill Auto-Detection](.claude/rules/WORKFLOW.md) for implementation details.
+
+---
+
 ## Security Hook
 
-The security guard ([.CLAUDE/hooks/security-guard.sh](.CLAUDE/hooks/security-guard.sh)) blocks:
+The security guard ([.claude/hooks/security-guard.sh](.claude/hooks/security-guard.sh)) blocks:
 
 - **Privileged commands**: `sudo`, `su`, `runas`, `chmod 777`
 - **Destructive operations**: `rm -rf /`, `format`, `mkfs`, `dd`
@@ -118,7 +177,7 @@ Edit `CLAUDE.md` to match your project's:
 
 ### 3. Customize Commands
 
-Modify commands in `.CLAUDE/commands/` to match your:
+Modify commands in `.claude/commands/` to match your:
 - Project paths
 - Release workflow
 - Docker registry
@@ -141,7 +200,7 @@ Hook configuration and shared permissions:
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.CLAUDE/hooks/security-guard.sh\"",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/security-guard.sh\"",
             "timeout": 10,
             "statusMessage": "Security check..."
           }
@@ -174,7 +233,7 @@ Hook configuration and shared permissions:
 ### WORKFLOW.md
 
 - **Operating Principles**: Correctness, minimal changes, verification
-- **Task Management**: File-based tracking in `.CLAUDE/tasks/`
+- **Task Management**: File-based tracking in `.claude/tasks/`
 - **Quality Assurance**: Test before commit, incremental delivery
 - **Communication**: Concise, high-signal reporting
 

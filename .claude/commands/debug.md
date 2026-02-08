@@ -45,6 +45,18 @@ Identify the type of input:
 - Log file path (@logs/...)
 - Problem description
 
+### Step 0.5: Auto-Detect Skills
+
+After parsing input, detect and load relevant skills:
+1. Use `Bash` to list `~/.claude/skills/*/SKILL.md` (Glob does not follow symlinks)
+2. Read frontmatters to extract `name`, `description`, `triggers`
+3. Match `triggers` against the error/log content, file paths, and technology keywords
+4. Load matched skills (read full content) — their rules guide the **entire debug session**
+5. Display to user: "Skills loaded: `skill-a`, `skill-b`" (or "No skills detected")
+6. If no skills are installed, skip silently
+
+> Loaded skills MUST be injected into **every subagent prompt** during all subsequent steps (Explore, Research, Implement). See WORKFLOW.md § Context Injection.
+
 ### Step 1: Analyze
 
 Deep log/error analysis:
