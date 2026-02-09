@@ -160,6 +160,13 @@ The security guard ([.claude/hooks/security-guard.sh](.claude/hooks/security-gua
 
 ## Quick Start
 
+### Prerequisites
+
+- **Claude Code**: Latest version ([claude.ai/code](https://claude.ai/code))
+- **Git**: 2.30+
+- **GitHub CLI**: 2.0+ (for `/release` and `/docker-release` commands)
+- **Bash**: 4.0+ (Linux/macOS/WSL2)
+
 ### 1. Copy Configuration
 
 ```bash
@@ -267,9 +274,31 @@ git checkout -b v1.2.0
 
 ---
 
+## Troubleshooting
+
+### Security hook blocks a legitimate operation
+
+**Cause**: The pre-execution guard matches a pattern in your command.
+
+**Solution**: Review `.claude/hooks/security-guard.sh` to understand the blocked pattern. If the operation is safe, temporarily disable hooks via `/hooks` menu or set `"disableAllHooks": true` in `.claude/settings.json`.
+
+### Skills not auto-detected
+
+**Cause**: Skills are installed but not matched against the current task.
+
+**Solution**: Verify skills are installed at `~/.claude/skills/<name>/SKILL.md`. Check that the `triggers` field in the SKILL.md frontmatter matches your project markers (file extensions, technology names).
+
+### Command not found
+
+**Cause**: Claude Code doesn't recognize the slash command.
+
+**Solution**: Verify the command file exists at `.claude/commands/<command>.md` and follows the required format with `argument-hint` and `allowed-tools` fields.
+
+---
+
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -277,5 +306,14 @@ This project is licensed under the [MIT License](LICENSE).
 
 **LOW-LAYER Engineering** - Toulouse, France
 
+- GitHub: [@Astocanthus](https://github.com/Astocanthus)
 - Website: [https://low-layer.com](https://low-layer.com)
 - Contact: contact@low-layer.com
+
+---
+
+## Acknowledgments
+
+- Built for [LOW-LAYER](https://low-layer.com) infrastructure automation
+- Powered by [Claude Code](https://claude.ai/code) (Anthropic)
+- Skills framework by [jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills)
