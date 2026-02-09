@@ -10,99 +10,283 @@
 # ---
 
 # LOW-LAYER Source Available License
-# Version 1.0 - 2026
+# Version 1.1 - 2026
 
-Copyright (C) 2026 LOW-LAYER
+Copyright (C) 2026 LOW-LAYER Engineering SAS
 Contact: contact@low-layer.com
 
-## Definitions
+---
 
-- "Software" means the LOW-LAYER software and all associated components,
-  documentation, and configuration files distributed across any repository
-  under this license.
+## 1. Definitions
 
-- "User" means any individual who accesses or uses the Software, whether
-  directly or through automated systems.
+1.1. **"Licensor"** means LOW-LAYER Engineering SAS, a French société par
+actions simplifiée, and any successor or assignee of its rights under this
+License.
 
-- "Commercial Use" means any use of the Software that is primarily intended
-  for or directed toward commercial advantage or monetary compensation.
+1.2. **"You"** (or **"Your"**) means the individual or legal entity exercising
+the rights granted under this License. For legal entities, "You" includes any
+entity that controls, is controlled by, or is under common control with You,
+where "control" means ownership of more than fifty percent (50%) of the
+outstanding shares or beneficial ownership of such entity.
 
-- "Competing Service" means any product or service that provides functionality
-  substantially similar to the Software and is offered to third parties as a
-  managed service, hosted solution, or software-as-a-service.
+1.3. **"Software"** means the source code, object code, documentation,
+configuration files, and all associated components distributed by the Licensor
+under this License, including any updates or patches provided by the Licensor.
 
-## Grant of Rights
+1.4. **"User"** means any individual who accesses, operates, or interacts with
+the Software, whether directly or through automated systems, scripts, or
+programmatic interfaces.
 
-Subject to the terms and conditions of this License, the Licensor grants you
-a limited, non-exclusive, non-transferable, non-sublicensable license to:
+1.5. **"Commercial Use"** means any use of the Software that is primarily
+intended for or directed toward commercial advantage or monetary compensation,
+including but not limited to use in production environments that support
+revenue-generating activities.
 
-1. **View and Study**: Access, view, and study the source code of the Software.
+1.6. **"Competing Service"** means any product, platform, or service that
+provides functionality substantially similar to the Software and is offered to
+third parties as a managed service, hosted solution, platform-as-a-service, or
+software-as-a-service, whether or not for a fee.
 
-2. **Modify**: Create modifications and derivative works of the Software for
-   your internal use only.
+1.7. **"Derivative Work"** means any work that is based on or derived from the
+Software, including any modification, adaptation, translation, enhancement, or
+extension, whether in source or object form.
 
-3. **Use (Limited)**: Use the Software free of charge, provided that the total
-   number of Users does not exceed five (5) individuals.
+1.8. **"Contribution"** means any source code, documentation, or other material
+intentionally submitted to the Licensor for inclusion in the Software, including
+via pull requests, merge requests, patches, or any other submission mechanism.
 
-## Commercial License Required
+## 2. Grant of Rights
 
-A separate commercial license agreement with LOW-LAYER is required if:
+Subject to the terms and conditions of this License, the Licensor grants You a
+limited, non-exclusive, non-transferable, non-sublicensable, revocable license
+to:
 
-1. The total number of Users exceeds five (5) individuals; or
+2.1. **View and Study** — Access, read, and study the source code of the
+Software for personal or internal educational purposes.
 
-2. The Software is used for Commercial Use by an organization with annual
-   revenue exceeding €1,000,000; or
+2.2. **Modify** — Create modifications and Derivative Works of the Software for
+Your internal use only. Derivative Works remain subject to all terms of this
+License.
 
-3. You wish to redistribute, sublicense, or provide the Software to third
-   parties.
+2.3. **Use (Limited)** — Install, run, and use the Software free of charge,
+provided that the total number of Users does not exceed five (5) individuals at
+any given time.
+
+2.4. **Fork for Contribution** — Fork and publicly host the Software on a
+source code hosting platform solely for the purpose of proposing Contributions
+to the original project via pull requests or merge requests. Such forks must
+not be used, distributed, marketed, or operated independently or as a
+substitute for the Software, and must prominently link back to the original
+repository.
+
+## 3. Commercial License Required
+
+A separate commercial license agreement with the Licensor is required if any of
+the following conditions apply:
+
+3.1. The total number of Users exceeds five (5) individuals at any given time;
+or
+
+3.2. The Software is used for Commercial Use by an organization with annual
+consolidated revenue exceeding one million euros (€1,000,000); or
+
+3.3. You wish to redistribute, sublicense, embed, bundle, or otherwise provide
+the Software or any Derivative Work to third parties.
 
 To obtain a commercial license, contact: contact@low-layer.com
 
-## Restrictions
+## 4. Restrictions
 
-You may NOT:
+You may NOT, and may not permit any third party to:
 
-1. **Offer as Competing Service**: Use the Software to create, operate, or
-   offer a Competing Service to third parties.
+4.1. **Offer as Competing Service** — Use the Software, in whole or in part, to
+create, operate, host, or offer a Competing Service to third parties, whether
+directly or through intermediaries.
 
-2. **Remove Notices**: Remove, alter, or obscure any licensing, copyright,
-   or other notices in the Software.
+4.2. **Redistribute** — Distribute, sublicense, lease, rent, lend, sell, resell,
+or otherwise transfer the Software or any Derivative Work to any third party,
+in source or object form, without express prior written permission from the
+Licensor.
 
-3. **Circumvent Limitations**: Bypass, disable, or circumvent any license
-   validation, user counting, or feature restriction mechanisms.
+4.3. **Remove Notices** — Remove, alter, obscure, or falsify any licensing,
+copyright, attribution, or other proprietary notices contained in or on the
+Software.
 
-4. **Redistribute**: Distribute, sublicense, lease, rent, or lend the Software
-   to any third party without express written permission.
+4.4. **Circumvent Limitations** — Bypass, disable, tamper with, or circumvent
+any license validation, user counting, feature restriction, or access control
+mechanisms included in the Software.
 
-5. **Trademark Use**: Use LOW-LAYER trademarks, logos, or branding without
-   prior written consent.
+4.5. **Reverse Engineer** — Reverse engineer, decompile, or disassemble the
+Software, except to the limited extent permitted by applicable law
+(Directive 2009/24/EC, Article L122-6-1 of the French Code de la propriété
+intellectuelle) and only for interoperability purposes.
 
-## Contributions
+4.6. **Trademark Use** — Use the names, trademarks, service marks, trade names,
+logos, or branding of LOW-LAYER or the Licensor for any purpose without prior
+written consent, except as required for reasonable and customary attribution.
 
-Any contributions you make to the Software are subject to this License and
-you grant LOW-LAYER a perpetual, worldwide, royalty-free, irrevocable license
-to use, modify, and incorporate your contributions.
+4.7. **Merge into Permissive Projects** — Incorporate the Software or any
+substantial portion thereof into any project released under a permissive or
+copyleft open-source license (including but not limited to MIT, Apache-2.0,
+GPL, AGPL, MPL) without express prior written permission from the Licensor.
 
-## No Warranty
+## 5. Contributions
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
-FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-DEALINGS IN THE SOFTWARE.
+5.1. Any Contribution You submit to the Licensor is subject to this License.
+By submitting a Contribution, You grant the Licensor a perpetual, worldwide,
+royalty-free, irrevocable, non-exclusive, transferable license to use, copy,
+modify, prepare Derivative Works of, publicly display, publicly perform,
+sublicense, and distribute Your Contribution and any Derivative Works thereof,
+under any license the Licensor deems appropriate, including proprietary licenses.
 
-## Termination
+5.2. You represent and warrant that: (a) You are the original author of the
+Contribution or have sufficient rights to grant the above license; (b) the
+Contribution does not infringe any patent, trademark, copyright, trade secret,
+or other intellectual property right of any third party; (c) the Contribution
+is not subject to any third-party license that would require the Software to be
+distributed under different terms; and (d) if You are employed or contracted,
+Your employer or client has authorized You to make the Contribution.
 
-This License automatically terminates if you violate any of its terms. Upon
-termination, you must cease all use of the Software and destroy all copies
-in your possession.
+5.3. The Licensor is under no obligation to accept, review, or incorporate any
+Contribution.
 
-## Governing Law
+## 6. Patents
 
-This License shall be governed by and construed in accordance with the laws
-of France, without regard to its conflict of law provisions.
+6.1. **Patent License** — Subject to the terms of this License, the Licensor
+grants You a limited, non-exclusive, worldwide, royalty-free patent license
+under the Licensor's patent claims that are necessarily infringed by the
+Software as distributed by the Licensor, to make and use the Software solely as
+permitted under Section 2.
+
+6.2. **Patent Retaliation** — If You (or any entity on Your behalf) institute
+patent litigation or assert patent claims against the Licensor or any other
+licensee of the Software, alleging that the Software or any Contribution
+constitutes direct or contributory patent infringement, then all patent licenses
+granted to You under this License shall terminate as of the date such
+litigation or claim is filed.
+
+## 7. Audit Rights
+
+7.1. The Licensor reserves the right to verify Your compliance with this
+License. Upon reasonable written notice of no less than thirty (30) calendar
+days, the Licensor or an independent third-party auditor bound by
+confidentiality obligations may audit Your use of the Software, including but
+not limited to User counts, deployment scope, and usage patterns.
+
+7.2. You shall cooperate with any such audit and provide reasonable access to
+relevant records and systems. If an audit reveals non-compliance, You shall
+promptly cure such non-compliance and reimburse the Licensor for reasonable
+audit costs.
+
+## 8. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NONINFRINGEMENT.
+THE LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL BE UNINTERRUPTED,
+ERROR-FREE, SECURE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOU ASSUME
+THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE.
+
+## 9. Limitation of Liability
+
+9.1. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
+LICENSOR, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR AFFILIATES BE LIABLE
+FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE
+DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, LOSS OF DATA, LOSS OF
+BUSINESS OPPORTUNITIES, BUSINESS INTERRUPTION, OR COST OF PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES, ARISING OUT OF OR IN CONNECTION WITH THIS LICENSE
+OR THE SOFTWARE, HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR OTHERWISE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+9.2. IN ANY EVENT, THE LICENSOR'S TOTAL AGGREGATE LIABILITY UNDER OR IN
+CONNECTION WITH THIS LICENSE SHALL NOT EXCEED THE AMOUNTS ACTUALLY PAID BY YOU
+TO THE LICENSOR FOR THE SOFTWARE DURING THE TWELVE (12) MONTHS PRECEDING THE
+EVENT GIVING RISE TO LIABILITY, OR ONE HUNDRED EUROS (€100), WHICHEVER IS
+GREATER.
+
+## 10. Indemnification
+
+You agree to indemnify, defend, and hold harmless the Licensor and its officers,
+directors, employees, and agents from and against any and all claims, damages,
+losses, liabilities, costs, and expenses (including reasonable attorneys' fees)
+arising out of or related to: (a) Your use of the Software; (b) Your violation
+of this License; (c) Your violation of any applicable law or regulation; or
+(d) any Contribution You submit that infringes or misappropriates the
+intellectual property rights of any third party.
+
+## 11. Termination
+
+11.1. This License is effective until terminated. This License automatically
+terminates if You violate any material term of this License.
+
+11.2. For curable breaches, You shall have thirty (30) calendar days from the
+date You become aware of the breach (or are notified by the Licensor) to cure
+the breach. If the breach is cured within this period, the License shall be
+reinstated. If the breach is not cured, termination is immediate and
+irrevocable.
+
+11.3. Upon termination, You must immediately: (a) cease all use of the Software;
+(b) destroy or delete all copies of the Software in Your possession or control;
+and (c) certify such destruction in writing to the Licensor upon request.
+
+11.4. Sections 1, 5, 6.2, 7, 8, 9, 10, 12, 13, and 14 shall survive any
+termination or expiration of this License.
+
+## 12. Governing Law and Jurisdiction
+
+12.1. This License shall be governed by and construed in accordance with the
+laws of France, without regard to its conflict of law provisions.
+
+12.2. Any dispute arising out of or in connection with this License shall be
+submitted to the exclusive jurisdiction of the competent courts of the
+jurisdiction where the Licensor's registered office is located.
+
+12.3. Before initiating any legal proceedings, the parties agree to attempt to
+resolve any dispute through good-faith negotiation for a period of no less than
+sixty (60) calendar days.
+
+## 13. General Provisions
+
+13.1. **Severability** — If any provision of this License is held to be invalid,
+illegal, or unenforceable by a court of competent jurisdiction, such provision
+shall be modified to the minimum extent necessary to make it enforceable, and
+the remaining provisions shall continue in full force and effect.
+
+13.2. **Entire Agreement** — This License constitutes the entire agreement
+between the parties with respect to the subject matter hereof and supersedes
+all prior or contemporaneous communications, representations, understandings,
+and agreements, whether written or oral, relating to the Software.
+
+13.3. **Amendment** — This License may only be modified by the Licensor through
+the publication of a new version. No other amendment, waiver, or modification
+shall be effective unless in writing and signed by the Licensor.
+
+13.4. **Assignment** — You may not assign or transfer this License or any rights
+hereunder without the prior written consent of the Licensor. The Licensor may
+freely assign this License, in whole or in part, to any successor, acquirer, or
+affiliate without notice or consent.
+
+13.5. **Waiver** — The failure of the Licensor to enforce any right or provision
+of this License shall not constitute a waiver of such right or provision. Any
+waiver must be in writing and signed by the Licensor to be effective.
+
+13.6. **Notices** — All notices under this License shall be in writing and
+delivered to the contact address specified above or to such other address as
+may be designated by the Licensor.
+
+## 14. License Versioning
+
+14.1. The Licensor may publish revised or new versions of this License from time
+to time. Each version will be given a distinguishing version number.
+
+14.2. Once the Software has been made available under a particular version of
+this License, You may always continue to use it under the terms of that version.
+The Licensor may also specify that the Software is available under a later
+version, in which case You may choose to follow the terms of either version.
+
+14.3. No one other than the Licensor has the right to modify or publish new
+versions of this License.
 
 ---
 
