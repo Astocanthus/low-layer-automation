@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+---
+
+## [1.0.1] - 2026-02-09
+
+### Changed
+
+- **Auto-Allow Permissions** (`.claude/settings.json`)
+  - Added non-destructive command permissions for streamlined developer workflow
+  - File reading, builds, tests, search/exploration, and file navigation/copy/move operations
+  - Full stack tooling coverage: Go, Rust, Node.js/Angular, Docker, Git (read only), and GitHub CLI
+  - Eliminates manual approval prompts for safe, routine development operations
+
+---
+
 ## [1.0.0] - 2026-02-09
 
 ### Added
@@ -116,4 +132,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+[1.0.1]: https://github.com/Astocanthus/low-layer-automation/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/Astocanthus/low-layer-automation/releases/tag/v1.0.0
