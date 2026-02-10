@@ -11,6 +11,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2026-02-10
+
+### Added
+
+- **`/rg` Command: TDD Bug Fix Workflow** (`.claude/commands/rg.md`)
+  - Red/Green iteration cycle for test-driven bug fixing
+  - Red phase: write a failing E2E test that reproduces the bug
+  - Green phase: implement the minimal fix to make the test pass
+  - Structured workflow ensuring regression coverage before marking bugs resolved
+
+### Changed
+
+- **WORKFLOW.md Session Bootstrap Table** (`.claude/rules/WORKFLOW.md`)
+  - Added `/rg` command entry with required reads for skill detection and session bootstrap
+  - Updated quick reference section with `/rg` workflow guidance
+
+- **README.md and CLAUDE.md Command Count** (`README.md`, `CLAUDE.md`)
+  - Updated from 10 to 11 custom slash commands to reflect the addition of `/rg`
+
+---
+
 ## [1.0.1] - 2026-02-09
 
 ### Changed
@@ -132,5 +153,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+[1.1.0]: https://github.com/Astocanthus/low-layer-automation/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/Astocanthus/low-layer-automation/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/Astocanthus/low-layer-automation/releases/tag/v1.0.0

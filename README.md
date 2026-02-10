@@ -15,7 +15,7 @@ This repository contains a production-ready Claude Code setup with workflows for
 ## Features
 
 - **Security Hook**: Pre-execution guard blocking dangerous operations (sudo, rm -rf, sensitive files)
-- **10 Custom Commands**: Specialized workflows for common development tasks
+- **11 Custom Commands**: Specialized workflows for common development tasks
 - **[Skills Auto-Detection](#skills)**: Context-aware skill loading via [jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills)
 - **Code & Testing Standards**: Guidelines for code generation, documentation, and [test pyramid](.claude/standards/testing-standards.md)
 - **AI Orchestration**: Workflow patterns for effective Claude Code usage
@@ -57,6 +57,7 @@ low-layer-automation/
 │       ├── epct.md                  # /epct - Explore-Plan-Code-Test
 │       ├── arch-update.md           # /arch-update - Document architecture changes
 │       ├── create-cmd.md            # /create-cmd - Create new commands
+│       ├── rg.md                    # /rg - TDD bug fix (Red-Green)
 │       └── web-design.md            # /web-design - UI/UX specialist
 │
 ├── low-layer-architecture/           # Technical documentation (separate repo)
@@ -83,6 +84,7 @@ low-layer-automation/
 | `/epct` | Explore-Plan-Code-Test workflow for features |
 | `/arch-update` | Document architectural decisions and changes |
 | `/create-cmd` | Create and optimize new slash commands |
+| `/rg` | TDD bug fix: write a failing E2E test (Red), then fix the bug (Green) |
 | `/web-design` | Web development and UI/UX specialist mode |
 
 ---

@@ -178,6 +178,12 @@ is_sensitive_path() {
 is_sensitive_file() {
     local path="$1"
     local filename=$(basename "$path")
+    local extension="${filename##*.}"
+
+    # CSS files are never sensitive (e.g. tokens.css is design tokens, not secrets)
+    if [[ "$extension" == "css" ]]; then
+        return 1  # File OK
+    fi
 
     for pattern in "${SENSITIVE_FILES[@]}"; do
         if [[ "$filename" == $pattern ]] || [[ "$path" == *"$pattern"* ]]; then

@@ -24,6 +24,7 @@ At session start or before any command, load files in this order:
 | `/web-design` | `code-standards.md`, `readme-standards.md` |
 | `/debug` | `WORKFLOW.md` (error handling, triage checklist) |
 | `/arch-update` | `low-layer-architecture/` |
+| `/rg` | `WORKFLOW.md`, `code-standards.md`, `testing-standards.md` |
 | `/release`, `/release-note` | `changelog-standards.md`, `git-workflow.md` |
 
 > **Non-negotiable**: Never skip this bootstrap. Every command depends on it.
@@ -44,7 +45,7 @@ At session start or before any command, load files in this order:
 
 ### 0. Skill Auto-Detection (Commands with code tasks)
 
-Before starting work in commands like `/epct`, `/debug`, or any command that writes code:
+Before starting work in commands like `/epct`, `/debug`, `/rg`, or any command that writes code:
 
 1. **Discover skills**: Use `Bash` to list `~/.claude/skills/*/SKILL.md` (Glob does not follow symlinks)
 2. **Read frontmatters**: Extract `name`, `description`, `triggers` from each `SKILL.md`
@@ -356,4 +357,5 @@ A task is complete when:
 | Before major refactor | Review `.claude/rules/lessons.md` and `low-layer-architecture/` |
 | Blocked | Ask ONE question with recommended default |
 | Unexpected failure | Stop-the-line, preserve evidence, re-plan |
+| Bug fix with TDD approach | Use `/rg` (Red test, Green fix, verify) |
 | Task complete | Verify DoD checklist, update task plan in `tasks/` |
